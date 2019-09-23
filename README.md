@@ -1,78 +1,24 @@
-# PoseNet Demos
+# PoseNet to GIF
 
-## Contents
+Uses:
+- TensorFlow PoseNet (https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+- gif.js (https://github.com/jnordberg/gif.js)
 
-### Demo 1: Camera
+To take a video and generate a gif with the skeleton and keypoints of any body poses detected in the video.
 
-The camera demo shows how to estimate poses in real-time from a webcam video stream.
-
-<img src="https://raw.githubusercontent.com/tensorflow/tfjs-models/master/posenet/demos/camera.gif" alt="cameraDemo" style="width: 600px;"/>
-
-
-### Demo 2: Coco Images
-
-The [coco images](http://cocodataset.org/#home) demo shows how to estimate poses in images. It also illustrates the differences between the single-person and multi-person pose detection algorithms.
-
-<img src="https://raw.githubusercontent.com/tensorflow/tfjs-models/master/posenet/demos/coco.gif" alt="cameraDemo" style="width: 600px;"/>
-
-
-## Setup
-
-cd into the demos folder:
-
-```sh
-cd posenet/demos
+## How to install and run
+To install run
+```
+yarn 
 ```
 
-Install dependencies and prepare the build directory:
+Before running copy a video called test2.mp4 into a videos/ folder in the repo
 
-```sh
-yarn
+In order to run
+```
+yarn start
 ```
 
-To watch files for changes, and launch a dev server:
+Then go to http://localhost:1234 where your video will be shown along side the skeleton rendering
 
-```sh
-yarn watch
-```
-
-## If you are developing posenet locally, and want to test the changes in the demos
-
-Cd into the posenet folder:
-```sh
-cd posenet
-```
-
-Install dependencies:
-```sh
-yarn
-```
-
-Publish posenet locally:
-```sh
-yarn build && yarn yalc publish
-```
-
-Cd into the demos and install dependencies:
-
-```sh
-cd demos
-yarn
-```
-
-Link the local posenet to the demos:
-```sh
-yarn yalc link @tensorflow-models/posenet
-```
-
-Start the dev demo server:
-```sh
-yarn watch
-```
-
-To get future updates from the posenet source code:
-```
-# cd up into the posenet directory
-cd ../
-yarn build && yarn yalc push
-```
+In the Javascript console you can the time taken and progress of the pose detection
